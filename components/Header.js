@@ -1,48 +1,16 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import Icon from "react-native-vector-icons/dist/FontAwesome";
 
-// const Header = props => {
-//   return (
-//     <View style={styles.header}>
-//       <Text style={styles.welcome}>{props.name}</Text>
-//       <View style={styles.iconView}>
-//         <TouchableOpacity activeOpacity={0.8}>
-//           <Icon name="th-large" size={25} color="#a1b5ca" />
-//         </TouchableOpacity>
-//         <TouchableOpacity activeOpacity={0.8}>
-//           <Icon name="list" size={25} color="#e34" style={styles.iconAlign} />
-//         </TouchableOpacity>
-//       </View>
-//     </View>
-//   );
-// };
+import IconSet from "./IconSet";
 
-export default class Header extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-        
-    };
-  }
-
-  render() {
-    return (
-        <View style={styles.header}>
-        <Text style={styles.welcome}>{this.props.name}</Text>
-        <View style={styles.iconView}>
-          <TouchableOpacity activeOpacity={0.8} onPress={this.props.changeViewGrid}>
-            <Icon name="th-large" size={25} color={this.props.iconColor} />
-          </TouchableOpacity>
-          <TouchableOpacity activeOpacity={0.8} onPress={this.props.changeViewList}>
-            <Icon name="list" size={25} color={this.props.iconColor} style={styles.iconAlign} />
-          </TouchableOpacity>
-        </View>
-      </View>
-    );
-  }
-}
-
+const Header = ({name, changeViewGrid, changeViewList, iconColor}) => {
+  return (
+    <View style={styles.header}>
+      <Text style={styles.welcome}>{name}</Text>
+      <IconSet changeViewGrid={changeViewGrid} changeViewList={changeViewList}iconColor={iconColor} />
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
   header: {
@@ -63,11 +31,7 @@ const styles = StyleSheet.create({
     alignSelf: "flex-start",
     flexGrow: 1,
     paddingLeft: 20
-  },
-  iconView: {
-    justifyContent: "space-around",
-    flexDirection: "row",
-    alignItems: "center"
-  },
-  iconAlign: { marginLeft: 15, marginRight: 15 }
+  }
 });
+
+export default Header;

@@ -25,5 +25,21 @@
   },
   "jest": {
     "preset": "react-native"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.{js,jsx,md}": [
+        "eslint --fix",
+        "git add"
+      ],
+      "ignore": [
+        "**/package-lock.json"
+      ]
+    }
   }
 }
