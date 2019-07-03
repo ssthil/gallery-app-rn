@@ -34,7 +34,7 @@
   },
   "lint-staged": {
     "linters": {
-      "src/**/*.{js,jsx,md}": [
+      "components/**/*.{js,jsx,md}": [
         "eslint --fix",
         "git add"
       ],
