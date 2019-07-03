@@ -3,11 +3,24 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 
 import IconSet from "./IconSet";
 
-const Header = ({name, changeViewGrid, changeViewList, iconColor}) => {
+const Header = ({
+  name,
+  gridView,
+  listView,
+  changeViewGrid,
+  changeViewList,
+  iconColor
+}) => {
   return (
     <View style={styles.header}>
       <Text style={styles.welcome}>{name}</Text>
-      <IconSet changeViewGrid={changeViewGrid} changeViewList={changeViewList}iconColor={iconColor} />
+      <IconSet
+        gridView={gridView}
+        listView={listView}
+        changeViewGrid={changeViewGrid}
+        changeViewList={changeViewList}
+        iconColor={iconColor}
+      />
     </View>
   );
 };

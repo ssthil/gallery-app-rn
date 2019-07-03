@@ -13,6 +13,7 @@ export default class Gallery extends Component {
     imageData: null,
     loading: true,
     gridView: true,
+    listView: false,
     btnText: "Show List",
     iconColorActive: "#a1b5ca",
     iconColor: "#ccc"
@@ -45,14 +46,14 @@ export default class Gallery extends Component {
   }
 
   changeViewList = () => {
-    this.setState({ gridView: false });
+    this.setState({ gridView: false, listView: true });
   };
   changeViewGrid = () => {
-    this.setState({ gridView: true });
+    this.setState({ gridView: true, listView: false });
   };
 
   render() {
-    const { imageData, loading } = this.state;
+    const { imageData, loading, gridView, listView } = this.state;
     return (
       <View style={{ flex: 1 }}>
         {loading ? (
@@ -61,6 +62,8 @@ export default class Gallery extends Component {
           <View>
             <Header
               name="Gallery App"
+              gridView={gridView}
+              listView={listView}
               changeViewList={this.changeViewList}
               changeViewGrid={this.changeViewGrid}
               iconColor={this.state.iconColor}

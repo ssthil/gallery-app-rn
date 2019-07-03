@@ -2,13 +2,24 @@ import React from "react";
 import { TouchableOpacity, Text, View, StyleSheet } from "react-native";
 import Icon from "react-native-vector-icons/dist/FontAwesome";
 
-const IconSet = ({ changeViewGrid, changeViewList, iconColor }) => (
+const IconSet = ({
+  gridView,
+  listView,
+  changeViewGrid,
+  changeViewList,
+  iconColor
+}) => (
   <View style={styles.iconView}>
     <TouchableOpacity activeOpacity={0.8} onPress={changeViewGrid}>
-      <Icon name="th-large" size={25} color={iconColor} />
+      <Icon name="th-large" size={25} color={gridView ? "#e45" : iconColor} />
     </TouchableOpacity>
     <TouchableOpacity activeOpacity={0.8} onPress={changeViewList}>
-      <Icon name="list" size={25} style={styles.iconAlign} color={iconColor} />
+      <Icon
+        name="list"
+        size={25}
+        style={styles.iconAlign}
+        color={listView ? "#e45" : iconColor}
+      />
     </TouchableOpacity>
   </View>
 );
