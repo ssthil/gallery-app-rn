@@ -9,7 +9,8 @@ const Header = ({
   listView,
   changeViewGrid,
   changeViewList,
-  iconColor
+  iconColor,
+  iconColorActive
 }) => {
   return (
     <View style={styles.header}>
@@ -20,6 +21,7 @@ const Header = ({
         changeViewGrid={changeViewGrid}
         changeViewList={changeViewList}
         iconColor={iconColor}
+        iconColorActive={iconColorActive}
       />
     </View>
   );
@@ -29,7 +31,7 @@ const styles = StyleSheet.create({
   header: {
     justifyContent: "flex-start",
     flexDirection: "row",
-    backgroundColor: "#f4f4f4",
+    backgroundColor: "#4540c1",
     shadowColor: "#999",
     shadowOffset: { width: 0, height: 6 },
     shadowOpacity: 0.6,
@@ -38,7 +40,7 @@ const styles = StyleSheet.create({
   welcome: {
     fontSize: 20,
     textTransform: "uppercase",
-    color: "#345",
+    color: "#bed5fb",
     marginTop: 30,
     marginBottom: 30,
     alignSelf: "flex-start",
